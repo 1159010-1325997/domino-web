@@ -7,7 +7,13 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "format": "next lint --fix && prettier '**/*.{json,yaml}' --write --ignore-path .gitignore",
+    "check-types": "tsc --noEmit --pretty",
+    "test": "vitest",
+    "commit": "cz",
+    "prepare": "husky install",
+    "build-stats": "cross-env ANALYZE=true npm run build"
   },
   "dependencies": {
     "ahooks": "^3.8.1",
@@ -33,6 +39,10 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "@typescript-eslint/eslint-plugin": "^8.4.0",
+    "@typescript-eslint/parser": "6.13.1",
+    "@vitejs/plugin-react": "4.2.1",
+    "commitizen": "4.3.0",
+    "cross-env": "7.0.3",
     "tailwindcss": "^3.4.1",
     "typescript": "^5",
     "eslint": "8.54.0",
