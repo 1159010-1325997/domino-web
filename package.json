@@ -2,6 +2,7 @@
   "name": "domino-web",
   "version": "0.1.0",
   "private": true,
+  "author": "Hieu Le",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,18 +10,76 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "ahooks": "^3.8.1",
+    "axios": "^1.7.7",
+    "axios-auth-refresh": "^3.3.6",
+    "jwt-decode": "^4.0.0",
+    "lodash.get": "^4.4.2",
+    "lodash.isempty": "^4.4.0",
+    "next": "14.2.8",
     "react": "^18",
-    "react-dom": "^18",
-    "next": "14.2.8"
+    "react-dom": "^18"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@commitlint/cli": "^19.4.1",
+    "@commitlint/config-conventional": "^19.4.1",
+    "@commitlint/cz-commitlint": "^19.4.0",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/git": "^10.0.1",
+    "@types/lodash.debounce": "^4.0.9",
+    "@types/lodash.get": "^4.4.9",
+    "@types/lodash.isempty": "^4.4.9",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "postcss": "^8",
+    "@typescript-eslint/eslint-plugin": "^8.4.0",
     "tailwindcss": "^3.4.1",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.8"
+    "typescript": "^5",
+    "eslint": "8.54.0",
+    "eslint-config-airbnb": "19.0.4",
+    "eslint-config-airbnb-typescript": "17.1.0",
+    "eslint-config-next": "14.2.4",
+    "eslint-config-prettier": "9.0.0",
+    "eslint-plugin-import": "2.29.0",
+    "eslint-plugin-jest": "27.6.0",
+    "eslint-plugin-jest-dom": "5.1.0",
+    "eslint-plugin-jest-formatting": "3.1.0",
+    "eslint-plugin-jsx-a11y": "6.8.0",
+    "eslint-plugin-prettier": "5.0.1",
+    "eslint-plugin-react": "7.33.2",
+    "eslint-plugin-react-hooks": "4.6.0",
+    "eslint-plugin-simple-import-sort": "10.0.0",
+    "eslint-plugin-tailwindcss": "3.13.0",
+    "eslint-plugin-testing-library": "6.2.0",
+    "eslint-plugin-unused-imports": "3.0.0",
+    "husky": "8.0.3",
+    "lint-staged": "15.1.0",
+    "postcss": "8.4.31",
+    "postcss-import": "^16.1.0",
+    "prettier": "3.1.0",
+    "semantic-release": "22.0.8"
+  },
+  "config": {
+    "commitizen": {
+      "path": "@commitlint/cz-commitlint"
+    }
+  },
+  "release": {
+    "branches": [
+      "main"
+    ],
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/changelog",
+      [
+        "@semantic-release/npm",
+        {
+          "npmPublish": false
+        }
+      ],
+      "@semantic-release/git",
+      "@semantic-release/github"
+    ]
   }
 }
